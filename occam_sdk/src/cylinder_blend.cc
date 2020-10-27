@@ -40,6 +40,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #undef min
 #undef max
 
+#ifndef OCCAM_SSE2 
+#include <cmath>
+#endif
+
 struct BlendRemapSensor {
   int width;
   int height;
