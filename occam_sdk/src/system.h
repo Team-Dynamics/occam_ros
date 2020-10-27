@@ -39,6 +39,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define OCCAM_CPU_NEON 11
 #define OCCAM_HARDWARE_MAX_FEATURE 255
 
+#ifndef OCCAM_SSE2 
+#include <cstddef>
+#endif
+
 bool occamHardwareSupport(int feature);
 
 #if defined __SSE2__ || defined _M_X64  || (defined _M_IX86_FP && _M_IX86_FP >= 2)
