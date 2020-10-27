@@ -33,6 +33,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #undef min
 #undef max
 
+#ifndef OCCAM_SSE2 
+#include <cmath>
+#endif
+
 static DeferredImage subImage(const DeferredImage& img0,int x,int y,int width,int height) {
   auto gen_fn = [=](){
     OccamImage* img1 = 0;
