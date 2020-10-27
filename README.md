@@ -1,3 +1,7 @@
+# This is a fork
+
+This repository was forked from CityU-MBE with the intetntion to adapt it for a Nvidia Jetson Xavier NX. Running this code on a x64 CPU may result in poor performance compared to the original code.
+
 # OCCAM SETUP INSTRUCTION
 
 # Installation
@@ -27,7 +31,7 @@ Go into 'occam_sdk'
 ```
 mkdir release
 cd release
-cmake -DUSE_OPENCV=1 -DUSE_OPENGL=1 ..
+cmake -DUSE_OPENCV=1 -DUSE_OPENGL=1 -DOCCAM_SSE2=0 ..
 make
 ```
 
@@ -50,7 +54,7 @@ Link the package to your src folder in the catkin workspace:
 ln -sf <path/to/occam_node> <path/to/catkin_ws/src>
 ```
 
-Run `catkin_make` or `catkin build` in your catkin_ws
+Run `catkin build` in your catkin_ws
 
 **Test**
 
