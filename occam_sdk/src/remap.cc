@@ -449,7 +449,11 @@ int ImageRemap::operator() (OccamImageFormat format,
 
       if (s.inlier) {
 	if (format == OCCAM_GRAY8 || format == OCCAM_RGB24) {
-	  const short* wtab = channels == 1 ? &BilinearTab_i[0][0][0] : &BilinearTab_iC4[0][0][0];
+#ifndef OCCAM_SSE2 
+      const short* wtab = &BilinearTab_i[0][0][0];
+#else
+      const short* wtab = channels == 1 ? &BilinearTab_i[0][0][0] : &BilinearTab_iC4[0][0][0];  
+#endif
 	  int vec_length = RemapVec_8u(channels,srcp,src_step,dstp,ixyp,fxyp,length);
 	  length -= vec_length;
 	  dstp += vec_length * channels;
