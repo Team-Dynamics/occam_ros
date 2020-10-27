@@ -76,6 +76,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #undef min
 #undef max
 
+#ifndef OCCAM_SSE2 
+#include <cmath>
+#endif
+
 static const int REMAP_BORDER_TRANSPARENT = 0;
 static const int REMAP_BORDER_CONSTANT = 1;
 static const int REMAP_BORDER_REPLICATE = 2;
