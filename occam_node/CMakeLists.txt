@@ -39,7 +39,7 @@ catkin_package(
 # _______________INDIGO SDK____________________
 
 
-set(INDIGOSDK_PATH "/home/tyler/Software/occam/occam_sdk")   # <----- ADAPT ----------------------------------
+set(INDIGOSDK_PATH "~/occam_ros/occam_sdk")   # <----- ADAPT ----------------------------------
 
 set(INDIGOSDK_INCLUDE_DIR "${INDIGOSDK_PATH}/include")
 find_library(INDIGO_LIB NAMES indigo HINTS "${INDIGOSDK_PATH}/release/bin")
